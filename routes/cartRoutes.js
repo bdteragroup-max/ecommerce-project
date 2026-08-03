@@ -7,6 +7,10 @@ const { protect } = require('../middlewares/authMiddleware'); // <--- เช็�
 router.use(protect);
 
 router.get('/', cartController.getCart);
+router.post('/', cartController.addToCart);
 router.post('/add', cartController.addToCart);
+router.put('/items/:id', cartController.updateCartItem);
+router.delete('/items/:id', cartController.deleteCartItem);
+router.delete('/clear', cartController.clearCart);
 
 module.exports = router;
